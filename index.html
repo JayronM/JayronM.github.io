@@ -1,63 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Biography</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    p {
-      margin-bottom: 10px;
-    }
-
-    .profile-image {
-      display: block;
-      margin: 0 auto;
-      max-width: 200px;
-      border-radius: 50%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Shop</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <h1>Biography</h1>
+    <header>
+        <h1>Welcome to Fashion Shop</h1>
+    </header>
 
-  <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#special">Special Offers</a>
+        <a href="#general">General</a>
+    </nav>
 
-  <h2>John Doe</h2>
-  
-  <p><strong>Date of Birth:</strong> January 1, 1990</p>
-  
-  <p><strong>Occupation:</strong> Web Developer</p>
-  
-  <h3>About Me</h3>
-  
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a risus justo. Donec ullamcorper nulla nec ex faucibus, nec sagittis massa pretium. Sed facilisis, lacus a feugiat lacinia, neque turpis faucibus nulla, eu dapibus lorem nulla et dui. Mauris tempor, tellus eget efficitur ullamcorper, sapien eros pellentesque turpis, sit amet feugiat ligula leo id sem.</p>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Add information about your shop and its background here.
+        </p>
+    </section>
 
-  <h3>Experience</h3>
-  
-  <h4>Web Developer, XYZ Company (2015 - Present)</h4>
-  <ul>
-    <li>Developed and maintained websites using HTML, CSS, and JavaScript.</li>
-    <li>Collaborated with a team of designers and developers to create user-friendly interfaces.</li>
-    <li>Implemented responsive design principles to ensure compatibility across various devices.</li>
-  </ul>
-  
-  <h4>Junior Developer, ABC Agency (2012 - 2015)</h4>
-  <ul>
-    <li>Assisted in the development of web applications using PHP and MySQL.</li>
-    <li>Worked closely with senior developers to troubleshoot and debug code.</li>
-    <li>Participated in code reviews and contributed to team discussions on best practices.</li>
-  </ul>
+    <section id="special">
+        <h2>Special Offers</h2>
+        <div class="product">
+            <img src="special_offer_image.jpg" alt="Special Offer Product">
+            <h3>Special Offer Product</h3>
+            <p>$19.99</p>
+        </div>
+        <div class="product">
+            <!-- Add more special offer products here -->
+        </div>
+    </section>
 
-  <h3>Education</h3>
-  
-  <p><strong>Bachelor of Science in Computer Science</strong><br>University of Example</p>
+    <section id="general">
+        <h2>General</h2>
+        <p>
+            Add general information or content here.
+        </p>
+    </section>
 
+    <footer>
+        <p>&copy; 2023 Fashion Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetSectionId = link.getAttribute('href').slice(1);
+                showSection(targetSectionId);
+            });
+        });
+
+        function showSection(sectionId) {
+            sections.forEach((section) => {
+                if (section.id === sectionId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>
